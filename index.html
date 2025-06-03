@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справочник</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #sidebar {
+            width: 10%;
+            height: 100vh;
+            background-color: #f4f4f4;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+        #content {
+            width: 90%;
+            padding: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            cursor: pointer;
+            padding: 5px;
+            border-bottom: 1px solid #ccc;
+        }
+        li:hover {
+            background-color: #ddd;
+        }
+        #search {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<div id="sidebar">
+    <input type="text" id="search" placeholder="Поиск..." onkeyup="filterChapters()">
+    <ul id="chapterList">
+        <li onclick="loadChapter('chapter1.txt')">Глава 1</li>
+        <li onclick="loadChapter('chapter2.txt')">Глава 2</li>
+        <li onclick="loadChapter('chapter3.txt')">Глава 3</li>
+    </ul>
+</div>
+
+<div id="content">
+    <h2>Выберите главу</h2>
+    <p>Нажмите на название главы слева, чтобы увидеть текст.</p>
+</div>
+
+<script>
+    function loadChapter(file) {
+        fetch(`./chapters/${file}`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('content').innerHTML = `<h2>${file.replace('.txt', '')}</h2><p>${data}</p>`;
+            })
+            .catch(error => console.error('Ошибка загрузки главы:', error));
+    }
+
+    function filterChapters() {
+        let input = document.getElementById('search').value.toLowerCase();
+        let listItems = document.querySelectorAll("#chapterList li");
+
+        listItems.forEach(item => {
+            if (item.textContent.toLowerCase().includes(input)) {
+                item.style.display = "block";
+            } else {
+                item.style.display = "none";
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

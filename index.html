@@ -13,33 +13,27 @@
         }
         
         #sidebar {
-            width: 10%;
+            width: 15%;
             height: 100vh;
             background-color: #f4f4f4;
-            padding: 10px;
+            padding: 10px 0px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
         
         #content {
-            width: 90%;
+            width: 85%;
             padding: 20px;
         }
         
         ul {
-            list-style: none;
-            padding: 0;
+            list-style: disc;
+            padding-left: 20px;
         }
         
-        li {
-            cursor: pointer;
-            padding: 5px;
-            border-bottom: 1px solid #ccc;
+        li {            
+            padding: 5px;            
         }
-        
-        li:hover {
-            background-color: #ddd;
-        }
-        
+                
         #search {
             width: 100%;
             padding: 5px;
@@ -54,12 +48,17 @@
     <div id="sidebar">
         <input type="text" id="search" placeholder="Поиск..." onkeyup="filterChapters()">
         <ul id="chapterList">
-            <li onclick="toggleSubmenu('submenu1')">Раздел 1 ▸</li>
-            <ul id="submenu1" style="display: none; padding-left: 15px;">
-                <li onclick="loadChapter('chapter001.txt'); event.stopPropagation();">Глава 1</li>
-                <li onclick="loadChapter('chapter002.txt'); event.stopPropagation();">Глава 2</li>
+            <li onclick="toggleSubmenu('submenu_dt')">Типы данных▸</li>
+            <ul id="submenu_dt" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter('data_types/dt001.html'); event.stopPropagation();">Ссылочные типы данных</li>
             </ul>
-            <li onclick="loadChapter('chapter003.txt')">Глава 3</li>
+            <li onclick="toggleSubmenu('submenu_ds')">Структуры данных▸</li>
+            <ul id="submenu_ds" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter('data_structures/ds001.html'); event.stopPropagation();">Глава 1</li>
+                <li onclick="loadChapter('data_structures/ds002_arrays.html'); event.stopPropagation();">Массивы</li>
+                <li onclick="loadChapter('data_structures/ds003.html'); event.stopPropagation();">Глава 3</li>
+            </ul>
+            <li onclick="loadChapter('chapter003.html')">Глава 3</li>
         </ul>
     </div>
 
@@ -73,7 +72,7 @@
             fetch(`./chapters/${file}`)
                 .then(response => response.text())
                 .then(data => {
-                    document.getElementById('content').innerHTML = `<h2>${file.replace('.txt', '')}</h2><p>${data}</p>`;
+                    document.getElementById('content').innerHTML = `<h2>${file.replace('.html', '')}</h2><p>${data}</p>`;
                 })
                 .catch(error => console.error('Ошибка загрузки главы:', error));
         }

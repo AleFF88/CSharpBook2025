@@ -77,19 +77,37 @@
                 })
                 .catch(error => console.error('Ошибка загрузки главы:', error));
         }
-
-        function filterChapters() {
-            let input = document.getElementById('search').value.toLowerCase();
-            let listItems = document.querySelectorAll("#chapterList li");
-
-            listItems.forEach(item => {
-                if (item.textContent.toLowerCase().includes(input)) {
-                    item.style.display = "block";
-                } else {
-                    item.style.display = "none";
-                }
-            });
-        }
+		
+		function filterChapters() {
+			const input = document.getElementById('search').value.toLowerCase();
+			const chapterList = document.getElementById('chapterList');
+			const items = chapterList.querySelectorAll('li');
+		
+			items.forEach(item => {
+				item.style.display = "none"; // Сначала всё скрываем
+			});
+		
+			items.forEach(item => {
+				const text = item.textContent.toLowerCase();
+		
+				// Если текст подходит — показываем его и родителей
+				if (text.includes(input)) {
+					item.style.display = "block";
+		
+					// Показываем родительский ul, если он вложенный
+					let parent = item.parentElement;
+					while (parent && parent.id !== 'chapterList') {
+						if (parent.tagName.toLowerCase() === 'ul') {
+							parent.style.display = 'block';
+						}
+						if (parent.tagName.toLowerCase() === 'li') {
+							parent.style.display = 'block';
+						}
+						parent = parent.parentElement;
+					}
+				}
+			});
+		}
 
         function toggleSubmenu(id) {
             const submenu = document.getElementById(id);

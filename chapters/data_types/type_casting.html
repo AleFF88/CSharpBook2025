@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<body>
+    <h1>Приведение типов в C#</h1>
+
+    <h2>Неявное приведение типов (implicit)</h2>
+    <p>Происходит автоматически компилятором, если преобразование безопасно:</p>
+    <pre><code>int a = 10;
+double b = a;               // Неявное приведение int → double
+Console.WriteLine(b);       // 10.0</code></pre>
+    <p>Здесь <code>int</code> → <code>double</code> — безопасно: вещественный тип способен представить целое число без потерь.</p>
+
+    <h2>Явное приведение типов (explicit)</h2>
+    <p>Нужно, если возможна потеря точности, переполнение или некорректные данные:</p>
+    <pre><code>double x = 9.7;
+int y = (int)x;         // Явное приведение double → int
+Console.WriteLine(y);   // 9</code></pre>
+    <p>Здесь дробная часть отбрасывается, поэтому требуется указание типа <code>(int)</code>.</p>
+
+    <h2>Оператор <code>is</code></h2>
+    <p>Проверяет совместимость объекта с данным типом и возвращает булевское значение:</p>
+    <pre><code>int a = 100;
+bool res1 = a is string;    // False
+bool res2 = a is int;       // True</code></pre>
+    <p>Для <code>null</code> результатом будет <code>false</code>.</p>
+
+    <h2>Оператор <code>as</code></h2>
+    <p>Пробует преобразовать объект к заданному типу. При невозможности — возвращает <code>null</code>:</p>
+    <pre><code>object obj = "Текст для печати.";
+string str = obj as string;
+if (str != null)
+{
+   Console.WriteLine(str.ToUpper());   // ТЕКСТ ДЛЯ ПЕЧАТИ.
+}</code></pre>
+
+    <h2>Ключевые моменты:</h2>
+    <table>
+        <tr>
+            <th>Оператор</th>
+            <th>Назначение</th>
+            <th>Ошибка при несовместимости</th>
+        </tr>
+        <tr>
+            <td><code>is</code></td>
+            <td>Проверка типа</td>
+            <td>Нет</td>
+        </tr>
+        <tr>
+            <td><code>as</code></td>
+            <td>Безопасное приведение ссылочных типов</td>
+            <td>Нет (возвращает <code>null</code>)</td>
+        </tr>
+        <tr>
+            <td><code>(Type)</code></td>
+            <td>Явное приведение</td>
+            <td>Да, <code>InvalidCastException</code></td>
+        </tr>
+    </table>
+
+</html></body>

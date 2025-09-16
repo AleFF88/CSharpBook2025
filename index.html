@@ -48,6 +48,259 @@
     <div id="sidebar">
         <input type="text" id="search" placeholder="Поиск..." onkeyup="filterChapters()">
         <ul id="chapterList">
+            <li onclick="toggleSubmenu('submenu_intro')">Основы программирования на C#▸</li>
+            <ul id="submenu_intro" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Структура программы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Переменные и константы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Литералы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Типы данных</li>                
+                <li onclick="loadChapter('intro/var.html'); event.stopPropagation();">Неявная типизация. Ключевое слово var</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Консольный ввод-вывод</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Арифметические операции</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Поразрядные операции</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Операции присваивания</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Преобразования базовых типов данных</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Условные выражения</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Конструкция if..else и тернарная операция</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Циклы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Массивы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Задачи с массивами</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Методы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Параметры методов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Возвращение значения и оператор return</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Передача параметров по ссылке и значению. Выходные параметры</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Массив параметров и ключевое слово params</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Рекурсивные функции</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Локальные функции</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Конструкция switch</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Перечисления enum</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_class')">Классы, структуры и пространства имен▸</li>
+            <ul id="submenu_class" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Классы и объекты</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Конструкторы, инициализаторы и деконструкторы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс Program и метод Main. Программы верхнего уровня</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Структуры</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Типы значений и ссылочные типы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Область видимости (контекст) переменных</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Пространства имен</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Глобальные пространства имен</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Подключение пространств имен по умолчанию</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Создание библиотеки классов в Visual Studio</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Создание библиотеки классов с помощью .NET CLI</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Модификаторы доступа</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Свойства</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Перегрузка методов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Статические члены и модификатор static</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Установка пакетов Nuget</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Константы, поля и структуры для чтения</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Псевдонимы типов и статический импорт</li>
+            </ul>	            
+            <li onclick="toggleSubmenu('submenu_null')">Null и nullable-типы▸</li>
+            <ul id="submenu_null" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter('null_/null_.html'); event.stopPropagation();">Null и ссылочные типы</li>
+                <li onclick="loadChapter('null_/null_valueType.html'); event.stopPropagation();">Null и значимые типы</li>
+                <li onclick="loadChapter('null_/null_check.html'); event.stopPropagation();">Проверка на null, операторы ?. и ??</li>
+                <li onclick="loadChapter('null_/null_alternative.html'); event.stopPropagation();">Альтернативы null</li>
+            </ul>		
+            <li onclick="toggleSubmenu('submenu_oop')">Объектно-ориентированное программирование▸</li>
+            <ul id="submenu_oop" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Наследование</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Преобразование типов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Виртуальные методы и свойства</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Скрытие методов и свойств</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Различие переопределения и скрытия методов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Абстрактные классы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс System.Object и его методы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Обобщенные типы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Ограничения обобщений</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Наследование обобщенных типов</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_exceptions')">Обработка исключений▸</li>
+            <ul id="submenu_exceptions" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Конструкция try..catch..finally</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Блок catch и фильтры исключений</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Типы исключений. Класс Exception</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Генерация исключения и оператор throw</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Создание классов исключений</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Поиск блока catch при обработке исключений</li>
+            </ul>					
+            <li onclick="toggleSubmenu('submenu_delegates')">Делегаты, события и лямбды▸</li>
+            <ul id="submenu_delegates" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Делегаты</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Применение делегатов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Анонимные методы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Лямбды</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">События</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Ковариантность и контравариантность делегатов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Делегаты Action, Predicate и Func</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Замыкания</li>
+            </ul>					
+            <li onclick="toggleSubmenu('submenu_interfaces')">Интерфейсы▸</li>
+            <ul id="submenu_interfaces" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Определение интерфейсов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Применение интерфейсов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Явная реализация интерфейсов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Реализация интерфейсов в базовых и производных классах</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Наследование интерфейсов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Интерфейсы в обобщениях</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Копирование объектов. Интерфейс ICloneable</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Сортировка объектов. Интерфейс IComparable</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Ковариантность и контравариантность обобщенных интерфейсов</li>
+            </ul>				
+            <li onclick="toggleSubmenu('submenu_addon01')">Дополнительные возможности ООП▸</li>
+            <ul id="submenu_addon01" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Определение операторов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Перегрузка операций преобразования типов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Индексаторы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Переменные-ссылки и возвращение ссылки</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Методы расширения</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Частичные классы, методы и свойства</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Анонимные типы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Кортежи</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Records</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">ref-структуры</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_pattern')">Pattern matching▸</li>
+            <ul id="submenu_pattern" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Паттерн типов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Паттерн свойств</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Паттерны кортежей</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Позиционный паттерн</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Реляционный и логический паттерны</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Паттерны списков</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_collections')">Коллекции▸</li>
+            <ul id="submenu_collections" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Список List<T></li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Двухсвязный список LinkedList<T></li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Очередь Queue<T></li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Стек Stack<T></li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Словарь Dictionary<T, V></li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс ObservableCollection</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Интерфейсы IEnumerable и IEnumerator</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Итераторы и оператор yield</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс Array и массивы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Span</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Индексы и диапазоны</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_strings')">Работа со строками▸</li>
+            <ul id="submenu_strings" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Строки и класс System.String</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Операции со строками</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Форматирование и интерполяция строк</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс StringBuilder</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Регулярные выражения</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_datetime')">Работа с датами и временем▸</li>
+            <ul id="submenu_datetime" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Структура DateTime</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Форматирование дат и времени</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">DateOnly и TimeOnly</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_addon02')">Дополнительные классы и структуры .NET▸</li>
+            <ul id="submenu_addon02" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Отложенная инициализация и тип Lazy</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Математические вычисления и класс Math</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Преобразование типов и класс Convert</li>
+            </ul>
+			<li onclick="toggleSubmenu('submenu_threds')">Многопоточность▸</li>
+            <ul id="submenu_threds" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Введение в многопоточность. Класс Thread</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Создание потоков. Делегат ThreadStart</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Потоки с параметрами и ParameterizedThreadStart</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Синхронизация потоков</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Мониторы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс Lock и синхронизация</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс AutoResetEvent</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Мьютексы</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Семафоры</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_parallel')">Параллельное программирование и библиотека TPL▸</li>
+            <ul id="submenu_parallel" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Задачи и класс Task</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Работа с классом Task</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Задачи продолжения</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Класс Parallel</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Отмена задач и параллельных операций. CancellationToken</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_async')">Aсинхронное программирование▸</li>
+            <ul id="submenu_async" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Асинхронные методы, async и await</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Возвращение результата из асинхронного метода</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Последовательное и параллельное выполнение. Task.WhenAll и Task.WhenAny</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Обработка ошибок в асинхронных методах</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Асинхронные стримы</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_linq')">LINQ▸</li>
+            <ul id="submenu_linq" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Основы LINQ</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Проекция данных</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Фильтрация коллекции</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Сортировка</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Объединение, пересечение и разность коллекций</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Агрегатные операции</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Получение части коллекции</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Группировка</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Соединение коллекций</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Проверка наличия и получение элементов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Отложенное и немедленное выполнение LINQ</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Делегаты в запросах LINQ</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_parallelLinq')">Parallel LINQ▸</li>
+            <ul id="submenu_parallelLinq" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Введение в Parallel LINQ. Метод AsParallel</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Метод AsOrdered</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Обработка ошибок и отмена параллельных операции</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_reflection')">Рефлексия▸</li>
+            <ul id="submenu_reflection" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Введение в рефлексию. Класс System.Type</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Применение рефлексии и исследование типов</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Исследование методов и конструкторов с помощью рефлексии</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Исследование полей и свойств с помощью рефлексии</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Динамическая загрузка сборок и позднее связывание</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Атрибуты в .NET</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_dlr')">Dynamic Language Runtime▸</li>
+            <ul id="submenu_dlr" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">DLR в C#. Ключевое слово dynamic</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">DynamicObject и ExpandoObject</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Использование IronPython в .NET</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_garbage')">Сборка мусора, управление памятью и указатели▸</li>
+            <ul id="submenu_garbage" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Сборщик мусора в C#</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Финализируемые объекты. Метод Dispose</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Конструкция using</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Указатели</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Указатели на структуры, члены классов и массивы</li>
+            </ul>
+            <li onclick="toggleSubmenu('submenu_')">Работа с файловой системой▸</li>
+            <ul id="submenu_" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Работа с дисками</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Работа с каталогами</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Работа с файлами. Классы File и FileInfo</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">FileStream. Чтение и запись файла</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Чтение и запись текстовых файлов. StreamReader и StreamWriter</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Бинарные файлы. BinaryWriter и BinaryReader</li>
+                <li onclick="loadChapter(''); event.stopPropagation();">Архивация и сжатие файлов</li>
+            </ul>			
+            <li onclick="toggleSubmenu('submenu_')">Работа с JSON▸</li>
+            <ul id="submenu_" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter(''); event.stopPropagation();">Сериализация в JSON. JsonSerializer</li>
+            </ul>
+            		
+            <li onclick="toggleSubmenu('submenu_patterns')">Паттерны</li>
+            <ul id="submenu_patterns" style="display: none; padding-left: 15px;">
+                <li onclick="loadChapter('patterns/common.html'); event.stopPropagation();">Классификация</li>
+                <li onclick="loadChapter('patterns/decorator.html'); event.stopPropagation();">Паттерн декоратор</li>
+            </ul>
+
+
+			<li onclick="toggleSubmenu('submenu_')">Переделать</li>
+            <li onclick="toggleSubmenu('submenu_')">Переделать</li>
+            <li onclick="toggleSubmenu('submenu_')">Переделать</li>
             <li onclick="toggleSubmenu('submenu_dt')">Типы данных▸</li>
             <ul id="submenu_dt" style="display: none; padding-left: 15px;">
                 <li onclick="loadChapter('data_types/data_types.html'); event.stopPropagation();">Ссылочные и значимые</li>

@@ -1,0 +1,60 @@
+НЕКОТОРЫЕ АЛЬТЕРНАТИВЫ NULL
+
+1. Option / Maybe паттерн
+Этот паттерн представляет значение, которое может быть либо присутствующим (Some), либо отсутствующим (None), без использования null. В C# его можно реализовать вручную или использовать сторонние библиотеки, например [LanguageExt](https://github.com/louthy/language-ext).
+	public struct Option<T> {
+		private readonly T _value;
+		public bool IsSome { get; }
+		public bool IsNone => !IsSome;	
+		public Option(T value) {
+			_value = value;
+			IsSome = value != null;
+		}	
+		public T ValueOr(T fallback) => IsSome ? _value : fallback;
+	}
+	
+	var name = new Option<string>("Alice");
+Этот код создаёт объект типа Option<string>, который содержит строку "Alice" как значение, и помечает его как "имеющее значение" (IsSome = true).
+Использование в случае null
+	var name = new Option<string>(null);
+	Console.WriteLine(name.ValueOr("Гость")); // Выведет "Гость"
+
+Плюсы:
+	Явное указание на возможность отсутствия значения
+	Уменьшает вероятность NullReferenceException
+
+Минусы:
+	Требует создания дополнительной обёртки
+	Не встроен в язык. Если использовать C# 8.0+ с включёнными nullable reference types, то уже есть встроенный механизм для отслеживания null, и необходимость в Option<T> может быть меньше.
+	Может быть избыточным для простых случаев
+
+Null Object Pattern
+Создаётся специальный объект, который представляет "пустое" поведение, но не является null.
+	public interface ILogger {
+		void Log(string message);
+	}	
+	public class NullLogger : ILogger {
+		public void Log(string message) { /* ничего не делает */ }
+	}
+Плюсы:
+	Упрощает код — не нужно проверять на null
+	Поведение по умолчанию безопасно
+
+Минусы:
+	Может скрыть ошибки, если null был ожидаем
+	Требует создания дополнительных классов
+
+3. ValueTuple с флагами состояния
+Используется ValueTuple, где один элемент — значение, другой — флаг, указывающий на его наличие.
+	(string name, bool hasValue) GetName()
+	{
+		return ("John", true);
+	}
+
+Плюсы:
+- Простая реализация
+- Не требует дополнительных классов
+
+Минусы:
+- Менее выразительно, чем Option
+- Возможны ошибки при неправильной интерпретации флага

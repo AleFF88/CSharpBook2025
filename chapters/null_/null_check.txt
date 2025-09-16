@@ -1,0 +1,29 @@
+ПРОВЕРКА НА NULL
+Для того что бы избежать NullReferenceException следует применять проверку на null. Например для значимых типов, обёрнутых в Nullable<T>, используется свойство .HasValue.
+	age? = GetAge();
+	if (age.HasValue) {
+		Console.WriteLine($"Возраст: {age.Value}");
+	}
+	else {
+		Console.WriteLine("Возраст не указан");
+	}
+
+Для ссылочных типов используется сравнение с null (MyClassEntity == null).
+
+ОПЕРАТОРЫ ?. И ??
+Так же существует Null-Conditional Operator, который позволяет безопасно обращаться к членам объекта, который может быть null.
+	string name = person?.Name; 
+Если person равен null, то person?.Name просто вернёт null, вместо того чтобы выбросить NullReferenceException.
+
+Также это работает и с методами:
+	person?.SayHello(); // Метод вызовется только если person не null
+
+Null-Coalescing (объединение) Operator позволяет задать значение по умолчанию, если выражение слева равно null.
+	string name = null;
+	string displayName = name ?? "Гость"; 
+Если name равен null, то displayName получит "Гость".
+
+КОМБИНИРОВАНИЕ ? И ??
+Можно использовать оба оператора вместе для безопасного доступа и подстановки значения:
+	string city = person?.Address?.City ?? "Неизвестно";
+Если person, Address или City равны null, то city получит "Неизвестно".
